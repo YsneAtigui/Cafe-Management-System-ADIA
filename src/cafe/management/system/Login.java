@@ -56,13 +56,12 @@ public class Login extends javax.swing.JFrame {
         txtpswd = new javax.swing.JPasswordField();
         txtemail = new javax.swing.JTextField();
         btnLogin = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        btnForgetpwd = new javax.swing.JButton();
         btnSignup = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -114,14 +113,14 @@ public class Login extends javax.swing.JFrame {
         });
         getContentPane().add(btnLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 350, 148, -1));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jButton2.setText("Forget Password ?");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnForgetpwd.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnForgetpwd.setText("Forget Password ?");
+        btnForgetpwd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnForgetpwdActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 190, -1));
+        getContentPane().add(btnForgetpwd, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 310, 190, -1));
 
         btnSignup.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSignup.setText("SignUp");
@@ -175,9 +174,12 @@ public class Login extends javax.swing.JFrame {
          }
     }//GEN-LAST:event_btnLoginActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void btnForgetpwdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnForgetpwdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+        setVisible(false);
+        new ForgetPassword().setVisible(true);
+        
+    }//GEN-LAST:event_btnForgetpwdActionPerformed
 
     private void btnSignupActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSignupActionPerformed
         // TODO add your handling code here:
@@ -245,9 +247,9 @@ public class Login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnExit;
+    private javax.swing.JButton btnForgetpwd;
     private javax.swing.JButton btnLogin;
     private javax.swing.JButton btnSignup;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
