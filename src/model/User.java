@@ -16,6 +16,7 @@ public class User {
     private String password;
     private String securityQuestion;
     private String answer;
+    private String status;
 
     public int getId() {
         return id;
@@ -71,6 +72,14 @@ public class User {
 
     public void setAnswer(String answer) {
         this.answer = answer;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
     
     
