@@ -6,6 +6,7 @@ package dao;
 import javax.swing.JOptionPane;
 import model.User;
 import java.sql.*;
+import java.util.ArrayList;
 /**
  *
  * @author yassine
@@ -54,5 +55,28 @@ public class UserDao {
         String query = "update user set password = '"+newPassword+"' where email ='"+email+"'";
         DbOperation.setDataOrDelete(query, "Password Changed Successful");
     }
-    
+    public static ArrayList<User>getAllRecords(String email){
+        ArrayList<User> arrayList = new ArrayList<>();
+        try{ 
+            ResultSet rs= DbOperation.getData("select *from user where email like '%"+email+"%'");
+           while(rs.next()){
+             User user = new User();
+             user.setId(rs.getInt("id"));
+             user.setName(rs.getString("name"));
+             user.setMobileNumber(rs.getString("mobileNumber"));
+             user.setAnswer(rs.getString("Adress"));
+             user.setSecurityQuestion(rs.getString("securityQuestion"));
+             user.setStatus(rs.getString("status"));
+             arrayList.add(user);             
+        }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null,e);
+        }
+        return arrayList;
+    }  
+   public static void changeStatus(String email,String status){
+       String query="update user set status='"+status+"'where email='"+email+"'";
+       DbOperation.setDataOrDelete(query,"status changed Successfully");
+   }
 }
