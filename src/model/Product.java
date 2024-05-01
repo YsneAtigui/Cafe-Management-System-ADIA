@@ -44,10 +44,8 @@ public class Product {
     }
 
     public void setPrice(String price) {
-        this.price = price;
-=======
- * @author hp
- */
+        this.price = price;}
+/**
 public class Product {
 
     public void setName(String text) {
@@ -80,7 +78,7 @@ public class Product {
 
     public String getId() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
->>>>>>> 499dd5c938f00b52cada10a91fb9eafd63dd9c15
+
     }
-    
+    */
 }
