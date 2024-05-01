@@ -17,6 +17,7 @@ public class Tables {
             DbOperation.setDataOrDelete(userTable, "User Table Created Successfully");
             DbOperation.setDataOrDelete(adminDetails, "Admin Created Successfully");
             DbOperation.setDataOrDelete(categoryTable, "Category Table Created Successfully");
+            DbOperation.setDataOrDelete (productTable,"product table created successfully");
         }
         catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
