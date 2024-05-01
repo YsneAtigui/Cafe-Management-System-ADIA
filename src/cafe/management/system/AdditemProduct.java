@@ -79,7 +79,7 @@ public class AdditemProduct extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(674, 0, -1, -1));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 0, -1, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -104,6 +104,7 @@ public class AdditemProduct extends javax.swing.JFrame {
         getContentPane().add(txtName, new org.netbeans.lib.awtextra.AbsoluteConstraints(217, 68, 334, -1));
 
         txtCategory.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        txtCategory.setToolTipText("");
         txtCategory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCategoryActionPerformed(evt);

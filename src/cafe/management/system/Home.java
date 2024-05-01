@@ -140,6 +140,8 @@ public class Home extends javax.swing.JFrame {
 
     private void btnViewEditDeleteProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnViewEditDeleteProductActionPerformed
         // TODO add your handling code here:
+        new ViewEditDeleteProduct().setVisible(true);
+        
     }//GEN-LAST:event_btnViewEditDeleteProductActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
