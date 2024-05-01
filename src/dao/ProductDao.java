@@ -3,19 +3,19 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package dao;
-<<<<<<< HEAD
+
 import model.Product;
 /**
  *
  * @author Surface pro
  */
-public class ProductDao {
+/** public class ProductDao {
     public static void save(Product product){
      String query ="insert into product (name,category,price) values ('"+product.getName()+"','"+product.getCategory()+"','"+product.getPrice()+"')";
      DbOperation.setDataOrDelete(query,"product added Successfully");
     }
-=======
 
+*/
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import model.Product;
@@ -69,6 +69,5 @@ public class ProductDao {
         
     
     }
-    
->>>>>>> 499dd5c938f00b52cada10a91fb9eafd63dd9c15
+
 }
