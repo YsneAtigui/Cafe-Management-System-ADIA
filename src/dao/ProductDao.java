@@ -4,7 +4,6 @@
  */
 package dao;
 
-import model.Product;
 /**
  *
  * @author Surface pro
@@ -57,7 +56,7 @@ public class ProductDao {
     
     public static void update(Product product){
          
-         String query = "update product set name ='"+product.getName()+"',category ='"+product.getCategory()+"',price ="+product.getPrice()+"'where id ='"+product.getId()+"'";
+         String query = "update product set name ='"+product.getName()+"', category ='"+product.getCategory()+"', price ='"+product.getPrice()+"' where id ='"+product.getId()+"'";
          DbOperation.setDataOrDelete(query,"Product Updated Successflly");
 
     }
@@ -68,6 +67,55 @@ public class ProductDao {
         DbOperation.setDataOrDelete(query,"Product Deleted Successflly");
         
     
+    }
+    public static ArrayList<Product> getAllRecordsByCategory(String category){
+        ArrayList<Product> arrayList = new ArrayList<>();
+        try{
+            ResultSet rs = DbOperation.getData("select *from product where category ='"+category+"'");
+            while(rs.next()){
+                Product product = new Product();
+                product.setName(rs.getString("name"));
+                arrayList.add(product);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return arrayList;
+    }
+    
+    public static ArrayList<Product> filterProductByname(String name,String category){
+        ArrayList<Product> arrayList = new ArrayList<>();
+        try{
+            ResultSet rs = DbOperation.getData("select *from product where name like '%"+name+"%' and category ='"+category+"'");
+            while(rs.next()){
+                Product product = new Product();
+                product.setName(rs.getString("name"));
+                arrayList.add(product);
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        
+        return arrayList;
+    }
+    
+    public static Product getProductByname(String name){
+        Product product = new Product();
+        try{
+            ResultSet rs = DbOperation.getData("select *from product where name='"+name+"'");
+            while(rs.next()){
+                product.setName(rs.getString(2));
+                product.setCategory(rs.getString(3));
+                product.setPrice(rs.getString(4));
+            }
+        }
+        catch(Exception e){
+            JOptionPane.showMessageDialog(null, e);
+        }
+        return product;
     }
 
 }

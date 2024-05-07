@@ -58,13 +58,12 @@ public class UserDao {
     public static ArrayList<User>getAllRecords(String email){
         ArrayList<User> arrayList = new ArrayList<>();
         try{ 
-            ResultSet rs= DbOperation.getData("select *from user where email like '%"+email+"%'");
+           ResultSet rs= DbOperation.getData("select *from user where email like '%"+email+"%'");
            while(rs.next()){
              User user = new User();
              user.setId(rs.getInt("id"));
              user.setName(rs.getString("name"));
              user.setMobileNumber(rs.getString("mobileNumber"));
-             user.setAnswer(rs.getString("Adress"));
              user.setSecurityQuestion(rs.getString("securityQuestion"));
              user.setStatus(rs.getString("status"));
              arrayList.add(user);             
@@ -78,5 +77,20 @@ public class UserDao {
    public static void changeStatus(String email,String status){
        String query="update user set status='"+status+"'where email='"+email+"'";
        DbOperation.setDataOrDelete(query,"status changed Successfully");
+   }
+   
+   public static void changePassword(String email,String oldPassword,String newPassword){
+       try{
+           ResultSet rs= DbOperation.getData("select *from user where email='"+email+"' and password ='"+oldPassword+"'");
+           if(rs.next()){
+               update(email, newPassword);
+           }
+           else{
+               JOptionPane.showMessageDialog(null, "Password is Wrong");
+           }
+       }
+       catch(Exception e){
+           JOptionPane.showMessageDialog(null, e);
+       }
    }
 }
