@@ -55,7 +55,7 @@ public class UserDao {
         String query = "update user set password = '"+newPassword+"' where email ='"+email+"'";
         DbOperation.setDataOrDelete(query, "Password Changed Successful");
     }
-    public static ArrayList<User>getAllRecords(String email){
+    public static ArrayList<User> getAllRecords(String email){
         ArrayList<User> arrayList = new ArrayList<>();
         try{ 
            ResultSet rs= DbOperation.getData("select *from user where email like '%"+email+"%'");
@@ -63,6 +63,7 @@ public class UserDao {
              User user = new User();
              user.setId(rs.getInt("id"));
              user.setName(rs.getString("name"));
+             user.setEmail(rs.getString("email"));
              user.setMobileNumber(rs.getString("mobileNumber"));
              user.setSecurityQuestion(rs.getString("securityQuestion"));
              user.setStatus(rs.getString("status"));

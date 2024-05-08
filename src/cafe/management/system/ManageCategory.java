@@ -56,8 +56,6 @@ public class ManageCategory extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setAlwaysOnTop(true);
-        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setLocation(new java.awt.Point(350, 134));
         setUndecorated(true);
         addComponentListener(new java.awt.event.ComponentAdapter() {

@@ -34,7 +34,7 @@ public void getAllRecords(String email){
          User userObj = itr.next();
          if(!userObj.getEmail().equals("admin@gmail.com"))
          {
-             dtm.addRow(new Object[]{userObj.getId(),userObj.getName(),userObj.getMobileNumber(),userObj.getAnswer(),userObj.getSecurityQuestion(),userObj.getStatus()});
+             dtm.addRow(new Object[]{userObj.getId(),userObj.getName(),userObj.getEmail(),userObj.getMobileNumber(),userObj.getSecurityQuestion(),userObj.getStatus()});
              
          }
      }
@@ -136,7 +136,7 @@ public void getAllRecords(String email){
        int index = jTable1.getSelectedRow();
        TableModel model = jTable1.getModel();
        String email = model.getValueAt(index, 2).toString();
-       String status = model.getValueAt(index, 6).toString();
+       String status = model.getValueAt(index, 5).toString();
        if(status.equals("true"))
            status="false";
        else
